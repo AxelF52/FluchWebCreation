@@ -1,0 +1,315 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Alex Création de sites web</title>
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--accent:#3b82f6;--muted:#94a3b8;--glass:rgba(255,255,255,0.04)}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:linear-gradient(180deg,#071129 0%,#071827 60%);color:#e6eef8;line-height:1.45}
+    header{padding:48px 20px 28px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#06b6d4);display:grid;place-items:center;font-weight:700;color:#021124}
+    .title{font-size:20px;font-weight:700}
+    nav a{color:var(--muted);text-decoration:none;margin-left:18px}
+    .container{max-width:1100px;margin:0 auto;padding:30px}
+
+    /* Hero */
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:36px;border-radius:14px;background:linear-gradient(180deg,rgba(255,255,255,0.02),transparent);backdrop-filter:blur(6px)}
+    .intro h1{font-size:28px;margin:0 0 10px}
+    .intro p{color:var(--muted);margin:0 0 18px}
+    .cta{display:flex;gap:10px}
+    .btn{background:var(--accent);color:#021124;padding:10px 14px;border-radius:10px;text-decoration:none;font-weight:600}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted)}
+
+    /* Card */
+    .card{background:var(--card);padding:18px;border-radius:12px;box-shadow:0 6px 18px rgba(2,6,23,0.6)}
+
+    /* Carousel */
+    .carousel{position:relative;overflow:hidden;border-radius:12px}
+    .slides{display:flex;transition:transform .6s cubic-bezier(.2,.9,.2,1)}
+    .slide{min-width:100%;padding:18px;display:flex;gap:18px;align-items:center}
+    .proj-preview{flex:1}
+    .proj-preview img{width:100%;border-radius:10px;border:1px solid rgba(255,255,255,0.04)}
+    .proj-meta{width:300px}
+    .carousel .nav{position:absolute;top:50%;transform:translateY(-50%);width:100%;display:flex;justify-content:space-between;padding:0 10px}
+    .nav button{background:rgba(0,0,0,0.35);border:0;color:#fff;padding:8px;border-radius:8px}
+
+    /* Shop demo */
+    .shop-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px}
+    .product{background:var(--glass);padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.03)}
+    .product img{width:100%;border-radius:8px}
+    .product .price{font-weight:700;margin-top:8px}
+
+    /* Partners */
+    .partners{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+    .partner a{display:inline-block;padding:10px 14px;border-radius:10px;background:rgba(255,255,255,0.02);color:var(--muted);text-decoration:none}
+
+    /* Contact */
+    footer{padding:30px;border-top:1px solid rgba(255,255,255,0.03);margin-top:40px}
+    .contact-grid{display:grid;grid-template-columns:1fr 260px;gap:20px}
+    .contact-grid a{color:var(--accent);text-decoration:none}
+
+    /* Booking */
+    form input,form select,form textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:transparent;color:inherit}
+    .note{color:var(--muted);font-size:13px}
+
+    /* Animations */
+    [data-fade]{opacity:0;transform:translateY(10px);transition:opacity .6s ease,transform .6s ease}
+    [data-fade].in{opacity:1;transform:none}
+
+    @media (max-width:900px){.hero{grid-template-columns:1fr}.contact-grid{grid-template-columns:1fr}.container{padding:14px}}
+  </style>
+</head>
+<body>
+  <header class="container">
+    <div class="brand">
+      <div class="logo"> <img style="width:60px" src="logo.png"> </div>
+      <div>
+        <div class="title">Alex — Création & hébergement</div>
+        <div class="note">Étudiant en ingénierie, sites pro à petit prix</div>
+      </div>
+    </div>
+    <nav>
+      <a href="#accueil">Accueil</a>
+      <a href="#offre">Offre & Prix</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main class="container">
+    <!-- HERO / Accueil -->
+    <section id="accueil" class="hero card" data-fade>
+      <div class="intro">
+        <h1>Bonjour et bienvenue !</h1>
+        <p style="color:#87CEEB; fond-weight:bold">Je m'appelle Alex, je suis etudiant en ingénierie informatique, je crée, héberge et supervise des sites internet modernes à petit prix. J'assure un résultat propre, professionnel et une prise en charge pendant 1 an pour toute modification ou correction.</p>
+        <div class="cta">
+          <a class="btn" href="#offre">Voir l'offre</a>
+          <a class="btn ghost" href="#projets">Voir des exemples</a>
+        </div>
+      </div>
+
+      <div class="card" style="text-align:center">
+        <h3 style="margin:0 0 8px">Quelques engagements</h3>
+        <p style="color:#87CEEB">Site en ligne et référencé en une semaine seulement — Garantie 1 an — Hébergement à vie</p>
+        <div style="margin-top:12px;display:flex;gap:8px;justify-content:center">
+          <div class="note">Maintenance</div>
+          <div class="note">Hébergement</div>
+          <div class="note">Référencement de base</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projets / Carrousel -->
+    <section id="projets" style="margin-top:26px" data-fade>
+      <h2>Exemples de sites</h2>
+      <p class="note">Quelques réalisations</p>
+
+      <div class="carousel card" style="margin-top:12px">
+        <div class="slides" id="slides">
+          <div class="slide">
+            <div class="proj-preview">
+              <img src="epo.png" alt="Projet Epocar" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'400\'><rect width=\'100%\' height=\'100%\' fill=\'%230e1724\' /><text x=\'50%\' y=\'50%\' fill=\'%2399a6b2\' font-size=\'20\' text-anchor=\'middle\'>Aperçu Epocar</text></svg>'"/>
+            </div>
+            <div class="proj-meta">
+              <h3>Epocar — site vitrine et e-commerce</h3>
+              <p class="note">Site crée pour un client <a href="https://epocar-7as9.onrender.com/home.html" target="_blank">Ouvrir le site</a></p>
+              <p class="note">Technos : HTML, CSS, JS — Hébergement Render</p>
+            </div>
+          </div>
+
+          <div class="slide">
+            <div class="proj-preview">
+              <img src="fluch.png" alt="Projet FluchInfo" onerror="this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'800\' height=\'400\'><rect width=\'100%\' height=\'100%\' fill=\'%230e1724\' /><text x=\'50%\' y=\'50%\' fill=\'%2399a6b2\' font-size=\'20\' text-anchor=\'middle\'>Aperçu FluchInfo</text></svg>'"/>
+            </div>
+            <div class="proj-meta">
+              <h3>FluchInfo — vitrine & mini-portfolio</h3>
+              <p class="note">Exemple de page d'accueil et pages internes. <a href="https://fluchinfo.onrender.com/home.html" target="_blank">Ouvrir</a></p>
+              <p class="note">Technos : HTML, CSS, JS</p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="nav">
+          <button id="prev">◀</button>
+          <button id="next">▶</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Fausses boutique / démonstration -->
+<section id="boutique" style="margin-top:40px" data-fade>
+  <h2 style="font-size:2rem; margin-bottom:10px;">Mini-boutique (démo)</h2>
+  <p class="note" style="margin-bottom:30px;">Découvrez un aperçu d’une boutique en ligne simple (exemple de bijoux faits main)</p>
+
+  <div class="shop-grid" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px;justify-items:center;">
+    <!-- Produit 1 -->
+    <div class="product" style="background:white;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,0.1);padding:18px;transition:transform 0.3s, box-shadow 0.3s;text-align:center;max-width:280px;">
+      <img src="2.png" alt="Collier doré" style="width:100%;border-radius:10px;margin-bottom:12px;">
+      <h3 style="margin:8px 0;font-size:1.2rem;color:#333;">Collier doré</h3>
+      <p style="color:#777;font-size:0.95rem;">Bijou fait main avec effet or</p>
+      <p class="price" style="font-weight:bold;color:#00BFFF;font-size:1.1rem;">15 €</p>
+      <button class="btn" onclick="order('Collier doré', 15)" style="margin-top:10px;">Commander</button>
+    </div>
+
+    <!-- Produit 2 -->
+    <div class="product" style="background:white;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,0.1);padding:18px;transition:transform 0.3s, box-shadow 0.3s;text-align:center;max-width:280px;">
+      <img src="1.png" alt="Bracelet nacré" style="width:100%;border-radius:10px;margin-bottom:12px;">
+      <h3 style="margin:8px 0;font-size:1.2rem;color:#333;">Bracelet nacré</h3>
+      <p style="color:#777;font-size:0.95rem;">Élastique, perles naturelles blanches</p>
+      <p class="price" style="font-weight:bold;color:#00BFFF;font-size:1.1rem;">20 €</p>
+      <button class="btn" onclick="order('Bracelet nacré', 20)" style="margin-top:10px;">Commander</button>
+    </div>
+
+    <!-- Produit 3 -->
+    <div class="product" style="background:white;border-radius:15px;box-shadow:0 4px 10px rgba(0,0,0,0.1);padding:18px;transition:transform 0.3s, box-shadow 0.3s;text-align:center;max-width:280px;">
+      <img src="3.png" alt="Boucles dorées" style="width:100%;border-radius:10px;margin-bottom:12px;">
+      <h3 style="margin:8px 0;font-size:1.2rem;color:#333;">Boucles dorées</h3>
+      <p style="color:#777;font-size:0.95rem;">Alliage inoxydable, fabrication artisanale</p>
+      <p class="price" style="font-weight:bold;color:#00BFFF;font-size:1.1rem;">25 €</p>
+      <button class="btn" onclick="order('Boucles dorées', 25)" style="margin-top:10px;">Commander</button>
+    </div>
+  </div>
+
+  <script>
+    // Effet au survol
+    document.querySelectorAll('.product').forEach(p => {
+      p.addEventListener('mouseenter', () => {
+        p.style.transform = 'scale(1.05)';
+        p.style.boxShadow = '0 6px 16px rgba(0,0,0,0.15)';
+      });
+      p.addEventListener('mouseleave', () => {
+        p.style.transform = 'scale(1)';
+        p.style.boxShadow = '0 4px 10px rgba(0,0,0,0.1)';
+      });
+    });
+  </script>
+</section>
+
+
+    <!-- Offre & Prix -->
+    <section id="offre"  style="margin-top:26px" data-fade>
+      <h2>Offres</h2>
+      <div class="card" style="margin-top:12px">
+        <h3>Pack Tout-en-un : 100€ (livré entre 5 et 10 jours)</h3>
+        <p class="note">Ce que j'inclus :</p>
+        <ul>
+          <li>Création du site internet (langage : HTML / CSS / JS)</li>
+          <li>Hébergement à vie</li>
+          <li>Référencement classique (indexation Google)</li>
+          <li>1 an de maintenance gratuite (corrections et petites modifications)</li>
+        </ul>
+        <p class="note">Options supplémentaires :</p>
+        <ul>
+          <li>Création d'un logo + branding simple (+20 €)</li>
+          <li>Création, impression et envoi de 250 cartes de visite (+25€)</li>
+          <li>Création des réseaux pour votre entreprise Insta, Facebook, Tiktok, Vinted... (+10 €)</li>
+          <li>Nom de domaine à acheter à vie (+10 €)</li>
+        </ul>
+        <p class="note">Ce que je ne propose pas :</p>
+        <ul>
+          <li>Un système de création de compte sur le site</li>
+          <li>Une sécurité poussée</li>
+        </ul>
+        <h4>Avant la confirmation du devis, un appel téléphonique est nécessaire pour définir précisément vos besoins.</h4>
+        <a class="btn" href="#rdv">Prendre RDV</a>
+      </div>
+
+      <h2>Prendre RDV</h2>
+      <div class="card" style="margin-top:12px">
+      <p class="note">Formulaire de demande</p>
+      <form action="https://formspree.io/f/xwplyyoa" method="POST">
+        <label>Nom</label>
+        <input type="text" name="name" required placeholder="Votre nom" />
+
+        <label>Numéro de téléphone</label>
+        <input type="text" name="phone" required placeholder="Votre téléphone" />
+
+        <label>Service</label>
+        <select name="service">
+          <option style="color:black;">Site vitrine</option>
+          <option style="color:black;">Boutique simple</option>
+          <option style="color:black;">Autre</option>
+        </select>
+
+        <label>Date de RDV souhaitée</label>
+        <input type="date" name="date" />
+
+        <label>Commentaires</label>
+        <textarea name="message" rows="4" placeholder="Précisez rapidement votre demande, heure de RDV, etc..."></textarea>
+
+        <input type="text" name="_gotcha" style="display:none">
+
+        <div style="margin-top:10px;display:flex;gap:8px">
+          <button class="btn" type="submit">Envoyer la demande</button>
+          <button type="reset" class="btn ghost">Réinitialiser</button>
+        </div>
+      </form>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" style="margin-top:26px" data-fade>
+      <h2>Réseaux</h2>
+      <div class="card contact-grid" style="margin-top:12px">
+        <div>
+          <p class="note">Me retrouver sur :</p>
+          <ul>
+            <li><a href="https://www.vinted.fr/items/7388404343-creation-de-site-internet" target="_blank">Vinted</a> (profil)</li>
+            <li><a href="https://www.leboncoin.fr" target="_blank">Leboncoin</a> (non dispo)</li>
+            <li><a href="https://www.fiverr.com" target="_blank">Fiverr</a> (non dispo)</li>
+            <li><a href="https://www.5euros.com" target="_blank">5euros.com</a> (non dispo)</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="container">
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap">
+      <div class="note">© Alex Création & hébergement • Étudiant en ingénierie</div>
+      <div class="note">Site de promotion pour vous rendre service</div>
+    </div>
+  </footer>
+
+  <script>
+    // Simple fade-in on scroll
+    const fades = document.querySelectorAll('[data-fade]');
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{if(e.isIntersecting) e.target.classList.add('in')})
+    },{threshold:0.12});
+    fades.forEach(f=>io.observe(f));
+
+    // Carousel
+    const slides = document.getElementById('slides');
+    let idx = 0;
+    const count = slides.children.length;
+    function update(){ slides.style.transform = `translateX(${-idx*100}%)` }
+    document.getElementById('prev').onclick = ()=>{ idx=(idx-1+count)%count; update() }
+    document.getElementById('next').onclick = ()=>{ idx=(idx+1)%count; update() }
+
+    // Order simulation
+    function order(name,price){
+      alert('Commande simulée : '+name+' — '+price+'€\nLe client recevra un email de confirmation (démo).');
+    }
+
+    // Booking simulation
+    function handleBooking(e){
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const service = document.getElementById('service').value;
+      const date = document.getElementById('date').value || 'à convenir';
+      const message = document.getElementById('message').value;
+      const res = document.getElementById('bookingResult');
+      res.textContent = `Merci ${name} — demande reçue pour \"${service}\" le ${date}. Je vous contacte bientôt au ${email}.`;
+      document.getElementById('booking').reset();
+      return false;
+    }
+    function resetForm(){ document.getElementById('booking').reset(); document.getElementById('bookingResult').textContent=''; }
+  </script>
+</body>
+</html>
